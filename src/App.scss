@@ -2,6 +2,7 @@ $greyDark:#040404;
 $greyLight: #131313;
 $greyLighter:#282828;
 $greyNav:#090909;
+$green:#1db954;
 
 @font-face
 {
@@ -19,19 +20,23 @@ body
 {
     font-family: circular-book;
 }
+body::-webkit-scrollbar
+{
+    display:none;
+}
 
 
 .App
 {
-    height: calc(100vh-90px);
-    min-height: 86vh;
+    height: 89%;
     background: $greyLight;
     display:flex;
+    position: relative;
 }
 .navBar
 {
     width:240px;
-    height:calc(100vh-90px);
+    height:98%;
     background: $greyDark;
     color:snow;
     padding:10px;
@@ -55,14 +60,22 @@ body
         padding: 0;
         li
         {
+            display:flex;
+            align-items: center;
             color:lightgray;
             list-style: none;
             border-radius: 5px;
             cursor:pointer;
-            padding:0.85rem;
-            font-size: 0.9rem;
+            padding:0.5rem 0.75rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease-i-out;
             font-family: circular-bold;
+            svg
+            {
+                fill:white;
+                margin-right: 15px;
+                font-size:0.85rem;
+            }
             &.active{
                 background: $greyLighter;
             }
@@ -94,17 +107,27 @@ body
     color:white;
     justify-content: space-between;
     padding: 0.5rem 2rem;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 .main
 {
     width:100%;
-    font-weight: 600;
-    font-size: small;
+    overflow-y: scroll;
+    position: relative;
+    padding-top: 3.4rem;
     .mainContext
     {
+        margin-left: 1rem;
         color:white;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem ;
+        
     }
+}
+.main::-webkit-scrollbar
+{
+    display:none;
 }
 
 
@@ -123,20 +146,50 @@ body
     align-items: center;
     justify-content: center;
     color:snow;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid black;
 }
 .cardWrap
 {
-    padding:1rem 0;
+    padding:0rem 0;
+    cursor:pointer;
+    h1
+    {
+        margin-bottom: 0;
+    }
+    h2
+    {
+        font-family: circular-book;
+        font-weight: 200;
+        margin-top: 0.2rem;
+        font-size: 1rem;
+        color:lightgray;
+    }
+    .cardWrapsInner
+    {
+        display:flex;
+    }
     .card
     {
+        margin-top: 10px;
         margin-left: 1.2rem;
         background: $greyLighter;
         border-radius: 10px;
         width:140px;
         overflow:hidden;
         padding:1.0rem;
-        height: 210px;
+        height: 240px;
         color:white;
+        margin-bottom: 5rem;
+        position: relative;
+        &:hover
+        {
+            .playIcon
+            {
+                opacity:1;
+            }
+        }
         .cardImage
         {
             height:140px;
@@ -154,17 +207,45 @@ body
         }
         .cardContent
         {
-            padding: 0.8rem 0;
+            padding: 0.5rem 0;
             display:flex;
             flex-direction: column;
             flex-grow: inherit;
             h3
             {
-                padding:0.2rem 0;
                 color:white;
                 font-size: 0.8rem;
-                font-weight: 600;
+                font-weight: 700;
+                margin-bottom: 0;
+            }
+            h4
+            {
+                margin-top: 0.2rem;
+                color:white;
+                font-size: 0.7rem;
+                font-weight: 400;
+                margin-bottom: 0;
             }
         }
+    }
+}
+.playIcon
+{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    background:$green;
+    color:white;
+    margin-left: auto;
+    opacity: 0;
+    position: absloute;
+    right:1.5rem;
+    bottom:1rem;
+    svg
+    {
+        margin:auto;
+        fill:white;
     }
 }
