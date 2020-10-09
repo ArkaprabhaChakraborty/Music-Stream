@@ -1,6 +1,6 @@
 import React from 'react';
-import {ReactComponent as PlayIcon} from '../svgs/play.svg' 
-import Categories from '../components/Categories'
+import Categories from '../components/Categories';
+import {Switch, Route} from 'react-router-dom';
 
 const Main = ()=>{
     return(
@@ -8,7 +8,11 @@ const Main = ()=>{
             <div className="uppernav">
                 dummy text 
             </div>
-            <Categories/>
+            <Switch>
+                <Route path="/" exact component={Categories}></Route>
+                <Route path="/search">Search</Route>
+                <Route path="/your-library">Your Library</Route>
+            </Switch>
         </div>
     )
 }
