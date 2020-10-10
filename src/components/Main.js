@@ -1,6 +1,7 @@
 import React from 'react';
 import Categories from '../components/Categories';
 import {Switch, Route} from 'react-router-dom';
+import Play from '../components/pages/Playlists';
 
 const Main = ()=>{
     return(
@@ -12,7 +13,8 @@ const Main = ()=>{
                 <Route path="/" exact component={Categories}></Route>
                 <Route path="/search">Search</Route>
                 <Route path="/your-library">Your Library</Route>
-            </Switch>
+                <Route path="/playlist/:id">{Play}</Route>
+                </Switch>
         </div>
     )
 }

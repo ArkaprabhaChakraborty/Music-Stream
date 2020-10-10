@@ -1,5 +1,7 @@
 import React from 'react';
 import {ReactComponent as PlayIcon} from '../svgs/play.svg'; 
+import {Link} from 'react-router-dom';
+
 
 const Playlist =(props)=>{
     const dataPlaylists = [
@@ -72,6 +74,7 @@ const Playlist =(props)=>{
     return(
         <div className="cardWrapsInner">
         {matchedPlaylists.map(playlist =>(
+            <Link to={'/playlist/' + playlist.id}>
             <div className="card">
             <div className="cardImage">
             <img src={playlist.img} alt=""/>
@@ -85,6 +88,7 @@ const Playlist =(props)=>{
             </span>
             </div>
             </div>
+            </Link>
         ))}
        
         </div>
