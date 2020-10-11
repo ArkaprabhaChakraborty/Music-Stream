@@ -13,7 +13,7 @@ const Main = ()=>{
                 <Route path="/" exact component={Categories}></Route>
                 <Route path="/search">Search</Route>
                 <Route path="/your-library">Your Library</Route>
-                <Route path="/playlist/:id">{Play}</Route>
+                <Route path="/playlist/:id" component={Play}></Route>
                 </Switch>
         </div>
     )

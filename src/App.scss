@@ -32,6 +32,7 @@ body::-webkit-scrollbar
     background: $greyLight;
     display:flex;
     position: relative;
+    color:white;
 }
 .navBar
 {
@@ -274,4 +275,66 @@ body::-webkit-scrollbar
         margin:auto;
         fill:white;
     }
+}
+
+.playlistPage
+{
+    display: flex;
+    flex-direction: column;
+    background:linear-gradient(rgb(108, 22, 158),rgb(0, 0, 0));
+    .playlistPageInfo
+    {
+        width:100%;
+        height:100%;
+        margin-top:3.4rem;
+        margin-bottom: 0;
+        text-align: center;
+        display: flex;
+        padding-left: 2rem;
+        .playlistPageImage
+        {
+            height:200px;
+            width: 200px;
+            margin-right:0;
+            padding:1rem;
+            img
+            {
+                height:inherit;
+                width: inherit;
+                object-fit: cover;
+            }
+        }
+        .playlistPageContent
+        {
+            margin-right: auto;
+            text-align: left;
+            p
+            {
+                font-weight: 100;
+                color: lightgray;
+            }
+        }
+    }
+    .icons
+        {
+            display:flex;
+            margin-left: 3rem;
+            .playbutton
+            {
+                width:40px;
+                height:40px;
+                border-radius: 50%;
+                overflow: hidden;
+                display: flex;
+                background:$green;
+                color:white;
+                opacity: 0;
+                svg
+                {
+                    margin:auto;
+                    fill:white;
+                }
+            }
+        }
+    
 }

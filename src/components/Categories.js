@@ -38,9 +38,9 @@ const Categories=()=>{
     
 
     return (
-        <div>{dataCategories.map((category) =>(
+        <div>{dataCategories.map((category,id) =>(
         <div className="mainContext">
-     <div className="cardWrap">
+     <div className="cardWrap" key={id}>
         <h1>{category.name}</h1>
         <h2>{category.tagline}</h2>
         <Playlist category_id = {category.id}/>
