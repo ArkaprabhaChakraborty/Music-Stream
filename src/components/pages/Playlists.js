@@ -1,7 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import {ReactComponent as PlayIcon} from '../pages/svgs/play.svg'; 
-
+import {ReactComponent as HeartIcon} from '../pages/svgs/heart.svg';
+import {ReactComponent as NoteIcon} from '../pages/svgs/note.svg';
 
 const Play = () =>{
     let {id} = useParams();
@@ -13,25 +14,68 @@ const Play = () =>{
                     <img src="https://d.newsweek.com/en/full/772816/1-5-jupiter-nasa.jpg" alt=""/>
                     </div>
                     <div className="playlistPageContent">
+                    <h5>PLAYLIST</h5>
                     <h1>Title {id}</h1>
-                    <h5>Spotify</h5>
                     <p>Playlist description</p>
+                    <h5>Spotify</h5>
                     </div>
             </div>
+            <br></br>
             <div className="icons">
                 <div className="playbutton">
                     <PlayIcon/>
                 </div>
-                <div className="iconsHeart"></div>
+                <div className="hearticon">
+                    <HeartIcon/>
+                </div>
                 <div className="iconsDots"></div>
             </div>
             <div className="playlistPageSongs">
-                <ul>
-                    <li>Song 1</li>
-                    <li>Song 2</li>
-                    <li>Song 3</li>
-                    <li>Song 4</li>
-                    <li>Song 5</li>
+                <ul className="songlist">
+                    <li>
+                        <div className="songIcon">
+                            <NoteIcon />
+                        </div>
+                        <div className="songDetails">
+                            <h3>Held Down</h3>
+                            <span>Martina Hingis</span>
+                        </div>
+                        <div className="songTime">
+                            <span>4:05</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="songIcon">
+                            <NoteIcon/>
+                        </div>
+                        <div className="songDetails">
+                            <h3>Held Down</h3>
+                            <span>Martina Hingis</span>
+                        </div>
+                        <div className="songTime">
+                            <span>4:05</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="songIcon"><NoteIcon/></div>
+                        <div className="songDetails">
+                            <h3>Held Down</h3>
+                            <span>Martina Hingis</span>
+                        </div>
+                        <div className="songTime">
+                            <span>4:05</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="songIcon"><NoteIcon/></div>
+                        <div className="songDetails">
+                            <h3>Held Down</h3>
+                            <span>Martina Hingis</span>
+                        </div>
+                        <div className="songTime">
+                            <span>4:05</span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
